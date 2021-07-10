@@ -345,18 +345,6 @@ func googleLogin(requiredCookies []string) ([]*network.Cookie, error) {
 }
 
 func createPlaylistYT(title string, videoIDs []string, cookies []*network.Cookie) (*string, error) {
-	/*
-	SAPISIDHASH 1625901976_c590075089cc08a8367475d4d528eb0508687b86
-
-	hash (sha1):
-
-	${timestamp} ${SAPISID} ${origin}
-	1625901976 jVJ7JQV3IaxWp1Q0/AflKp6v7HSShk6RQm https://www.youtube.com
-	c590075089cc08a8367475d4d528eb0508687b86
-
-	SAPISIDHASH 1625901976_c590075089cc08a8367475d4d528eb0508687b86
-	 */
-
 	now := strconv.Itoa(int(time.Now().UnixNano() / int64(time.Second)))
 	hash := now + " "
 
@@ -554,15 +542,15 @@ func main() {
 		"__Secure-1PAPISID",
 		"__Secure-1PSID",
 		"__Secure-3PSID",
-		"LOGIN_INFO",
-		"SIDCC",
-		"PREF",
+		//"LOGIN_INFO",
+		//"SIDCC",
+		//"PREF",
 		"SAPISID",
-		"APISID",
-		"SSID",
-		"SID",
-		"HSID",
-		"YSC",
+		//"APISID",
+		//"SSID",
+		//"SID",
+		//"HSID",
+		//"YSC",
 	})
 	if err != nil {
 		fmt.Println("Failed google login:", err)
